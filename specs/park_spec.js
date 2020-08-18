@@ -7,7 +7,7 @@ describe('Park', function () {
     beforeEach(function () {
         tRex = new Dinosaur("Tyrannosaurus Rex", "Carnivore", 50);
         tRex2 = new Dinosaur("Tyrannosaurus Rex", "Carnivore", 48);
-        dippy = new Dinosaur("Diplodicus", "Herbivore", 35);
+        dippy = new Dinosaur("Diplodocus", "Herbivore", 35);
         raptor = new Dinosaur("Raptor", "Carnivore", 45);
         park = new Park("Dennis Nedry's Ultimate Family Fun Time Experience", 2999);
         park.dinosaurs.push(tRex, dippy);
@@ -73,6 +73,14 @@ describe('Park', function () {
         park.removeDinosaursBySpecies("Tyrannosaurus Rex");
         const actual = park.dinosaurs;
         assert.deepStrictEqual(actual, [dippy, raptor]);
+    });
+
+    it("should return an object with number of each diet type", function () {
+        park.addDinosaur(tRex2);
+        park.addDinosaur(raptor);
+        const actual = park.dietTypesOfDinosaurs();
+        const expected = { Carnivore: 3, Herbivore: 1, Omnivore: 0 };
+        assert.deepStrictEqual(actual, expected);
     });
 
 });
