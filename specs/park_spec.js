@@ -67,4 +67,12 @@ describe('Park', function () {
         assert.strictEqual(actual, 93043975)
     });
 
+    it("should remove dinosaur(s) by species", function () {
+        park.addDinosaur(tRex2);
+        park.addDinosaur(raptor);
+        park.removeDinosaursBySpecies("Tyrannosaurus Rex");
+        const actual = park.dinosaurs;
+        assert.deepStrictEqual(actual, [dippy, raptor]);
+    });
+
 });
