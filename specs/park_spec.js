@@ -3,12 +3,19 @@ const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function () {
-
+    let tRex, dippy, raptor, park;
     beforeEach(function () {
-
+        tRex = new Dinosaur("Tyrannosaurus Rex", "Carnivore", 50);
+        dippy = new Dinosaur("Diplodicus", "Herbivore", 35);
+        raptor = new Dinosaur("Raptor", "Carnivore", 45);
+        park = new Park("Dennis Nedry's Ultimate Family Fun Time Experience", 2999);
     })
 
-    it('should have a name');
+    it('should have a name', function () {
+        const actual = park.name;
+        const expected = "Dennis Nedry's Ultimate Family Fun Time Exeperience"
+        assert.strictEqual(actual, expected);
+    });
 
     it('should have a ticket price');
 
