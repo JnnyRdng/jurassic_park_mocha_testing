@@ -30,4 +30,14 @@ Park.prototype.bestDinosaur = function () {
     return bestDinosaur;
 }
 
+Park.prototype.findBySpecies = function (species) {
+    const found = [];
+    for (let dinosaur of this.dinosaurs) {
+        if (dinosaur.species === species) {
+            found.push(dinosaur);
+        }
+    }
+    return found;
+}
+
 module.exports = Park;
