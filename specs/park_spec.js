@@ -9,17 +9,24 @@ describe('Park', function () {
         dippy = new Dinosaur("Diplodicus", "Herbivore", 35);
         raptor = new Dinosaur("Raptor", "Carnivore", 45);
         park = new Park("Dennis Nedry's Ultimate Family Fun Time Experience", 2999);
-    })
+        park.dinosaurs.push(tRex, dippy);
+    });
 
     it('should have a name', function () {
         const actual = park.name;
-        const expected = "Dennis Nedry's Ultimate Family Fun Time Exeperience"
+        const expected = "Dennis Nedry's Ultimate Family Fun Time Experience"
         assert.strictEqual(actual, expected);
     });
 
-    it('should have a ticket price');
+    it('should have a ticket price', function () {
+        const actual = park.ticketPrice;
+        assert.strictEqual(actual, 2999);
+    });
 
-    it('should have a collection of dinosaurs');
+    it('should have a collection of dinosaurs', function () {
+        const actual = park.dinosaurs;
+        assert.deepStrictEqual(actual, [tRex, dippy]);
+    });
 
     it('should be able to add a dinosaur to its collection');
 
