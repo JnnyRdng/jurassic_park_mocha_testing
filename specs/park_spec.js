@@ -34,7 +34,11 @@ describe('Park', function () {
         assert.deepStrictEqual(actual, [tRex, dippy, raptor]);
     });
 
-    it('should be able to remove a dinosaur from its collection');
+    it('should be able to remove a dinosaur from its collection', function () {
+        park.removeDinosaur(tRex);
+        const actual = park.dinosaurs;
+        assert.deepStrictEqual(actual, [dippy]);
+    });
 
     it('should be able to find the dinosaur that attracts the most visitors');
 
