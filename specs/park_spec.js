@@ -9,7 +9,7 @@ describe('Park', function () {
         tRex2 = new Dinosaur("Tyrannosaurus Rex", "Carnivore", 48);
         dippy = new Dinosaur("Diplodicus", "Herbivore", 35);
         raptor = new Dinosaur("Raptor", "Carnivore", 45);
-        park = new Park("Dennis Nedry's Ultimate Family Fun Time Experience", 29.99);
+        park = new Park("Dennis Nedry's Ultimate Family Fun Time Experience", 2999);
         park.dinosaurs.push(tRex, dippy);
     });
 
@@ -21,7 +21,7 @@ describe('Park', function () {
 
     it('should have a ticket price', function () {
         const actual = park.ticketPrice;
-        assert.strictEqual(actual, 29.99);
+        assert.strictEqual(actual, 2999);
     });
 
     it('should have a collection of dinosaurs', function () {
@@ -57,8 +57,14 @@ describe('Park', function () {
         assert.strictEqual(actual, 85);
     });
 
-    it('should be able to calculate the total number of visitors per year');
+    it('should be able to calculate the total number of visitors per year', function () {
+        const actual = park.visitorsInAYear();
+        assert.strictEqual(actual, 31025);
+    });
 
-    it('should be able to calculate total revenue for one year');
+    it('should be able to calculate total revenue for one year', function () {
+        const actual = park.yearlyRevenue();
+        assert.strictEqual(actual, 93043975)
+    });
 
 });
