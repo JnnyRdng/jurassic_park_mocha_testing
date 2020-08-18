@@ -10,7 +10,7 @@ Park.prototype.addDinosaur = function (dinosaur) {
 
 Park.prototype.removeDinosaur = function (dinosaur) {
     const dinosaursToKeep = [];
-    for (let dino of this.dinosaurs) {
+    for (const dino of this.dinosaurs) {
         if (dino !== dinosaur) {
             dinosaursToKeep.push(dino);
         }
@@ -21,7 +21,7 @@ Park.prototype.removeDinosaur = function (dinosaur) {
 Park.prototype.bestDinosaur = function () {
     let bestDinosaur;
     let bestVisitors = 0;
-    for (let dinosaur of this.dinosaurs) {
+    for (const dinosaur of this.dinosaurs) {
         if (dinosaur.guestsAttractedPerDay > bestVisitors) {
             bestDinosaur = dinosaur;
             bestVisitors = dinosaur.guestsAttractedPerDay;
@@ -32,7 +32,7 @@ Park.prototype.bestDinosaur = function () {
 
 Park.prototype.findBySpecies = function (species) {
     const found = [];
-    for (let dinosaur of this.dinosaurs) {
+    for (const dinosaur of this.dinosaurs) {
         if (dinosaur.species === species) {
             found.push(dinosaur);
         }
@@ -42,7 +42,7 @@ Park.prototype.findBySpecies = function (species) {
 
 Park.prototype.totalDailyVisitors = function () {
     let total = 0;
-    for (let dinosaur of this.dinosaurs) {
+    for (const dinosaur of this.dinosaurs) {
         total += dinosaur.guestsAttractedPerDay;
     }
     return total;
@@ -58,14 +58,14 @@ Park.prototype.yearlyRevenue = function () {
 
 Park.prototype.removeDinosaursBySpecies = function (species) {
     const toRemove = this.findBySpecies(species);
-    for (let dinosaur of toRemove) {
+    for (const dinosaur of toRemove) {
         this.removeDinosaur(dinosaur);
     }
 }
 
 Park.prototype.dietTypesOfDinosaurs = function () {
     const dietTypes = { Carnivore: 0, Herbivore: 0, Omnivore: 0 };
-    for (let dinosaur of this.dinosaurs) {
+    for (const dinosaur of this.dinosaurs) {
         dietTypes[dinosaur.diet]++;
     }
     return dietTypes;
