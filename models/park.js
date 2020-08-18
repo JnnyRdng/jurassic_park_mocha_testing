@@ -9,7 +9,7 @@ Park.prototype.addDinosaur = function (dinosaur) {
 }
 
 Park.prototype.removeDinosaur = function (dinosaur) {
-    let dinosaursToKeep = [];
+    const dinosaursToKeep = [];
     for (let dino of this.dinosaurs) {
         if (dino !== dinosaur) {
             dinosaursToKeep.push(dino);
