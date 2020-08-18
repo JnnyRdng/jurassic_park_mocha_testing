@@ -53,7 +53,7 @@ describe('Park', function () {
     });
 
     it('should be able to calculate the total number of visitors per day', function () {
-        const actual = park.totalVisitors();
+        const actual = park.totalDailyVisitors();
         assert.strictEqual(actual, 85);
     });
 
