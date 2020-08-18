@@ -48,4 +48,8 @@ Park.prototype.totalDailyVisitors = function () {
     return total;
 }
 
+Park.prototype.visitorsInAYear = function () {
+    return this.totalDailyVisitors() * 365;
+}
+
 module.exports = Park;
